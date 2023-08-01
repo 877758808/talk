@@ -44,7 +44,7 @@ const App = Vue.createApp({
 		copyURL() {
 			navigator.clipboard.writeText(this.roomLink).then(
 				() => {
-					this.copyText = "Copied 👍";
+					this.copyText = "已复制 👍";
 					setTimeout(() => (this.copyText = ""), 3000);
 				},
 				(err) => console.error(err)
@@ -116,7 +116,7 @@ const App = Vue.createApp({
 					} catch (e) {}			
 				})
 				.catch((e) => {
-					alert("Unable to share screen. Please use a supported browser.");
+					alert("分享屏幕失败，请使用支持屏幕分享的浏览器。");
 					console.error(e);
 				});
 		},
@@ -160,7 +160,7 @@ const App = Vue.createApp({
 				})
 				.catch((err) => {
 					console.log(err);
-					alert("Error while swaping camera");
+					alert("切换摄像头出错");
 				});
 		},
 		changeMicrophone(deviceId) {
@@ -183,7 +183,7 @@ const App = Vue.createApp({
 				})
 				.catch((err) => {
 					console.log(err);
-					alert("Error while swaping microphone");
+					alert("切换麦克风出错");
 				});
 		},
 		sanitizeString(str) {
@@ -222,7 +222,7 @@ const App = Vue.createApp({
 				composeElement.textContent = "";
 				composeElement.blur;
 			} else {
-				alert("No peers in the room");
+				alert("房间中没有其他人");
 			}
 		},
 		sendDataMessage(key, value) {
